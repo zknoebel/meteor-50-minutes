@@ -9,6 +9,12 @@ if (Meteor.isClient) {
       return Tasks.find({}, {sort: {createdAt: -1}});
     }
   });
+
+  Template.tasks.events({
+    "submit .add-task": function (event) {
+      var name = event.target.name.value;
+    }
+  });
 }
 
 if (Meteor.isServer) {
